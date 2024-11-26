@@ -24,7 +24,7 @@ public class MainApp {
       user55.setLastName("LastUser55");
       user55.setEmail("User55@gmail.com");
       user55.setCar(car);
-      userService.add(user55);
+      userService.addUser(user55);
 
       Car car3 = new Car();
       car3.setModel("Mercedes");
@@ -34,7 +34,7 @@ public class MainApp {
       user3.setLastName("Lastname33");
       user3.setEmail("user33@mail.ru");
       user3.setCar(car3);
-      userService.add(user3);
+      userService.addUser(user3);
 
       Car car4 = new Car();
       car4.setModel("Tesla");
@@ -44,13 +44,13 @@ public class MainApp {
       user4.setLastName("Lastname44");
       user4.setEmail("user44@mail.ru");
       user4.setCar(car4);
-      userService.add(user4);
+      userService.addUser(user4);
 
 
-      userService.add(new User("User1", "Lastname1", "user1@mail.ru"));
-      userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
-      userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
-      userService.add(new User("User4", "Lastname4", "user4@mail.ru"));
+      userService.addUser(new User("User1", "Lastname1", "user1@mail.ru"));
+      userService.addUser(new User("User2", "Lastname2", "user2@mail.ru"));
+      userService.addUser(new User("User3", "Lastname3", "user3@mail.ru"));
+      userService.addUser(new User("User4", "Lastname4", "user4@mail.ru"));
 
       List<User> users = userService.listUsers();
       for (User user : users) {

@@ -14,8 +14,10 @@ public class UserDaoImp implements UserDao {
    @Autowired
    private SessionFactory sessionFactory;
 
+   private static final String hql="from User where car.model=:model and car.series=:series";
+
    @Override
-   public void add(User user) {
+   public void addUser(User user) {
       sessionFactory.getCurrentSession().save(user);
    }
 
@@ -28,7 +30,6 @@ public class UserDaoImp implements UserDao {
 
    @Override
    public List<User> findUserByCar(String model, int series) {
-      String hql="from User where car.model=:model and car.series=:series";
       TypedQuery<User> query=sessionFactory.getCurrentSession().createQuery(hql,User.class);
       query.setParameter("model", model);
       query.setParameter("series", series);
